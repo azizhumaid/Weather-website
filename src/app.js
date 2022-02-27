@@ -13,6 +13,7 @@ const Orange = chalk.hex('#FFA500').inverse.bold
 console.log(Orange('New Run!!!'))
 
 const app = express()
+const port = process.env.PORT || 3000
 
 //Define Paths for express config
 const publicDireectoryPath = path.join(__dirname,'../public')
@@ -84,6 +85,6 @@ app.get('/weather', (req, res) => {
 
 })
 
-app.listen(3000, ()=>{
-    console.log('Server is running on http://localhost:3000')
+app.listen(port, ()=>{
+    console.log('Server is running on http://localhost:'+port)
 })
